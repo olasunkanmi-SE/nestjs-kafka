@@ -9,7 +9,7 @@ export class AppService {
     @Inject('AUTH_SERVICE') private readonly authClient: ClientKafka,
   ) {}
   getHello(): string {
-    return 'Hello World!';
+    return 'Hello World!!';
   }
 
   handleOrderCreated(orderCreatedEvent: OrderCreatedEvent) {
