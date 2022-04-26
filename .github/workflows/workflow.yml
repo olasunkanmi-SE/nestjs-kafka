@@ -1,0 +1,26 @@
+name: CI for Food Delivery App
+
+on:
+  pull_request:
+    branches: [development, main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - name: ci for apis
+        working-directory: ./consumer
+        run: |
+          npm ci
+          npm run build
+          npm test
+      - name: ci for frontend
+        working-directory: ./frontend
+        run: |
+         npm ci
+         npm run build
+         npm run test-ci
