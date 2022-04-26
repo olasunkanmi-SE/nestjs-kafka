@@ -8,7 +8,7 @@ services:
       target: ${NODE_ENV}
     volumes:
       - ./api-gateway:/nestjs-kafka/api-gateway/src/app
-      - nestjs-kafka/api-gateway/src/app/node_modules
+      - /nestjs-kafka/api-gateway/src/app/node_modules
     command: npm run start:debug
     
   consumer:
